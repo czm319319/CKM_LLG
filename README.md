@@ -13,6 +13,8 @@ Clone the repository manually:
 git clone https://github.com/czm319319/CKM_LLG.git
 cd CKM_LLG
 conda env create -n <YOUR_ENV_NAME> -f environment.yml
+conda activate <YOUR_ENV_NAME>
+pip install -e .
 ```
 
 ## Usage
@@ -21,7 +23,7 @@ Here is a basic example of how to use the package:
 
 ```python
 import numpy as np
-from LLG.llg import LLG_Bounds
+from src.LLG.llg import LLG_Bounds
 
 seed = 123
 rng = np.random.default_rng(seed)
@@ -48,7 +50,6 @@ y_test = X_test @ beta_true + sigma_eps * rng.standard_normal(T_test)
 # Ridge grid
 z_grid = np.logspace(-4, 1, 100)
 
-
 ######### LLG Bounds #########
 model = LLG_Bounds(z_grid=z_grid, confidence_level=95).fit(X_train, y_train)
 
@@ -60,7 +61,6 @@ llg = model.llg(X_test)
 
 # (R2_OOS, asymptotic lower bound, one-side lower CI bound)
 r2_oos, r2_lb, r2_ci_lower = model.r2_bounds(X_test, y_test)
-
 
 print("LLG:", llg)
 print("R2_OOS:", r2_oos)
