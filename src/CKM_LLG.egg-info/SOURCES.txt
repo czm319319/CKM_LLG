@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/CKM_LLG.egg-info/PKG-INFO
+src/CKM_LLG.egg-info/SOURCES.txt
+src/CKM_LLG.egg-info/dependency_links.txt
+src/CKM_LLG.egg-info/top_level.txt
+src/LLG/__init__.py
+src/LLG/llg.py
+src/utils/__init__.py
+src/utils/plot.py
+src/utils/r2_bounds.py
+src/utils/ridge.py
+src/utils/rmt.py
